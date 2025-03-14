@@ -6,7 +6,6 @@ export default {
   Colors,
   text: {
     color: Colors.darkgray,
-    marginLeft: 10,
     fontSize: 14,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Courier',
   },
