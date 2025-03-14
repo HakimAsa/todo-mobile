@@ -1,0 +1,22 @@
+const Colors = {
+  black: '#000',
+  danger: '#ff5252',
+  dark: {},
+  darkgray: '#0c0c0c',
+  green: 'green',
+  focus: '#e0f7fa',
+  inputBorderColer: '#00796b',
+  light: {},
+  ligthblack: '#454545',
+  ligthgray: '#d3d3d3',
+  medium: '#6e6969',
+  orange: 'orange',
+  primary: '#232f3e',
+  primary1: '#1A7499', //'#0F1111', //'#00008b', //'#f4511e',
+  red: 'red',
+  success: '#198754',
+  white: '#fff',
+  yellow: 'yellow',
+}
+
+export default Colors
