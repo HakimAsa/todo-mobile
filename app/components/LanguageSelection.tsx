@@ -11,7 +11,13 @@ interface LsProps {
 export default function LanguageSelection({ initialValues, logo }: LsProps) {
   return (
     <View style={styles.container}>
-      <TmText small>LanguageSelection</TmText>
+      <TmText
+        small
+        style={styles.text}
+      >
+        LanguageSelection
+      </TmText>
+      {logo && <TmText style={{ marginTop: 10 }}>Logo</TmText>}
     </View>
   )
 }
@@ -19,8 +25,11 @@ export default function LanguageSelection({ initialValues, logo }: LsProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    color: Colors.white,
   },
 })
