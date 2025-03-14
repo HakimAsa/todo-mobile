@@ -1,15 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import LanguageSelection from '@/app/components/LanguageSelection'
+import { getLocales } from 'expo-localization'
 
+import LanguageSelection from '@/app/components/LanguageSelection'
+import fr from '@/app/config/fr'
+
+const data = [
+  {
+    label: 'english',
+    value: 'en',
+  },
+  {
+    label: 'french',
+    value: 'fr',
+  },
+]
+
+const defineInitialValue = function () {
+  const code = getLocales()[0]?.languageCode
+  return code === 'fr'
+    ? { label: 'french', value: code }
+    : { label: 'english', value: 'en' }
+}
 export default function Languages() {
-  const initialValues = { label: 'English', value: 'en' }
+  const initialValue = defineInitialValue()
   return (
     <LanguageSelection
-      initialValues={initialValues}
+      data={data}
+      initialValue={initialValue}
       logo
     />
   )
 }
-
-const styles = StyleSheet.create({})
