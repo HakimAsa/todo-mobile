@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import LanguageSelection from '@/app/components/LanguageSelection'
 
 export default function Languages() {
+  const initialValues = { label: 'English', value: 'en' }
   return (
-    <View>
-      <Text>Languages</Text>
-    </View>
+    <LanguageSelection
+      initialValues={initialValues}
+      logo
+    />
   )
 }
 
