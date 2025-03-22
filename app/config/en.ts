@@ -8,6 +8,8 @@ const en = {
   english: 'English',
   french: 'Français',
   home: 'Home',
+  myButton: 'My button',
+  next: 'Next',
   logout: 'Logout',
   save: 'Save',
   selectItem: 'Select an item',

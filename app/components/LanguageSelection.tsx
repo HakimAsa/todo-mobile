@@ -4,7 +4,10 @@ import { useState } from 'react'
 import Colors from '../config/colors'
 import TmText from './common/text/TmText'
 import i18n from '../i18n'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '../config/icons'
+import { onWeb } from '../config/constants'
+import TmButton from './common/button/TmButton'
+import RowContainer from './container/RowContainer'
 
 interface InitialValue {
   label: string
@@ -15,6 +18,8 @@ interface LsProps {
   data: InitialValue[]
   logo: boolean
 }
+
+const widthViewPort = '50%'
 
 export default function LanguageSelection({
   data,
@@ -28,6 +33,10 @@ export default function LanguageSelection({
     setOpen(false)
     i18n.locale = item.value
   }
+
+  const goNext = () => {
+    console.log('go next page')
+  }
   return (
     <View style={styles.container}>
       <View style={styles.columnContainer}>
@@ -39,10 +48,10 @@ export default function LanguageSelection({
         </TmText>
         <Pressable
           onPress={() => setOpen(!open)}
-          style={{ width: '15%', alignSelf: 'center' }}
+          style={{ width: widthViewPort, alignSelf: 'center' }}
         >
           <View style={styles.pressableView}>
-            <TmText style={{ color: Colors.black, paddingHorizontal: 30 }}>
+            <TmText style={{ color: Colors.black, paddingHorizontal: 5 }}>
               {i18n.t(selectedLanguage.label) ?? i18n.t('selectItem')}
             </TmText>
             <MaterialCommunityIcons
@@ -62,7 +71,7 @@ export default function LanguageSelection({
                 <TmText
                   style={{
                     color: Colors.black,
-                    paddingHorizontal: 30,
+                    paddingHorizontal: 5, //maybe 30 later
                     marginBottom: 5,
                   }}
                 >
@@ -72,8 +81,27 @@ export default function LanguageSelection({
             ))}
           </View>
         )}
+        <TmButton
+          style={{
+            backgroundColor: Colors.white,
+            width: widthViewPort,
+            marginTop: 10,
+            paddingHorizontal: 5,
+          }}
+          onPress={goNext}
+        >
+          <RowContainer>
+            <TmText>{i18n.t('next')}</TmText>
+            <MaterialCommunityIcons
+              name="arrow-right"
+              size={20}
+            />
+          </RowContainer>
+        </TmButton>
       </View>
-      {logo && <TmText style={{ marginTop: 10 }}>Logo</TmText>}
+      {logo && (
+        <TmText style={{ marginTop: 10, color: Colors.white }}>Logo</TmText>
+      )}
     </View>
   )
 }
@@ -93,7 +121,8 @@ const styles = StyleSheet.create({
   },
   languageView: {
     marginTop: 5,
-    width: '15%',
+    width: widthViewPort,
+    marginVertical: 10,
     backgroundColor: Colors.white,
   },
   pressableView: {
@@ -101,13 +130,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 10,
-    // paddingHorizontal: 30,
+    borderRadius: 5,
+    height: 35,
     backgroundColor: Colors.white,
   },
 
   text: {
     color: Colors.white,
     marginBottom: 10,
+    marginLeft: -50,
   },
 })

@@ -11,7 +11,7 @@ const Colors = {
   ligthgray: '#d3d3d3',
   medium: '#6e6969',
   orange: 'orange',
-  primary: '#232f3e',
+  primary: '#39063A', //;'#232f3e',
   primary1: '#1A7499', //'#0F1111', //'#00008b', //'#f4511e',
   red: 'red',
   success: '#198754',
