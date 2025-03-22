@@ -14,8 +14,9 @@ interface InitialValue {
   value: string
 }
 interface LsProps {
-  initialValue: InitialValue
   data: InitialValue[]
+  goNext: () => void
+  initialValue: InitialValue
   logo: boolean
 }
 
@@ -23,6 +24,7 @@ const widthViewPort = '50%'
 
 export default function LanguageSelection({
   data,
+  goNext,
   initialValue,
   logo,
 }: LsProps) {
@@ -34,9 +36,6 @@ export default function LanguageSelection({
     i18n.locale = item.value
   }
 
-  const goNext = () => {
-    console.log('go next page')
-  }
   return (
     <View style={styles.container}>
       <View style={styles.columnContainer}>
