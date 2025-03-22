@@ -1,6 +1,6 @@
 import { Platform } from 'react-native'
 
-//current os
+//current os platform
 export const onIOS = Platform.OS === 'ios'
 export const onWeb = Platform.OS === 'web'
 export const onAnd = Platform.OS === 'android'

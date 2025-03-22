@@ -4,4 +4,5 @@ import {
   FontAwesome6,
 } from '@expo/vector-icons'
 
-export { MaterialCommunityIcons, MaterialIcons, FontAwesome6 }
+export { MaterialCommunityIcons, MaterialIcons }
+export default FontAwesome6
