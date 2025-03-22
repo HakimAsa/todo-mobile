@@ -5,7 +5,6 @@ import Colors from '../config/colors'
 import TmText from './common/text/TmText'
 import i18n from '../i18n'
 import { MaterialCommunityIcons } from '../config/icons'
-import { onWeb } from '../config/constants'
 import TmButton from './common/button/TmButton'
 import RowContainer from './container/RowContainer'
 
