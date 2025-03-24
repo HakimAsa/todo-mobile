@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View } from 'react-native'
+import { Image, Pressable, StyleSheet, View } from 'react-native'
 import { useContext, useState } from 'react'
 
 import Colors from '../config/colors'
@@ -11,6 +11,7 @@ import {
   LanguageContext,
   LanguageContextType,
 } from '../context/LanguageContext'
+import Logo from './common/image/Logo'
 
 interface InitialValue {
   label: string
@@ -110,9 +111,7 @@ export default function LanguageSelection({
           </RowContainer>
         </TmButton>
       </View>
-      {logo && (
-        <TmText style={{ marginTop: 10, color: Colors.white }}>Logo</TmText>
-      )}
+      {logo && <Logo />}
     </View>
   )
 }
