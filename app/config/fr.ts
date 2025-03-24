@@ -5,6 +5,7 @@ const fr = {
   english: 'English',
   french: 'Français',
   home: 'Accueil',
+  language: 'Langue',
   myButton: 'Mon bouton',
   next: 'Suivant',
   save: 'Enregistrer',

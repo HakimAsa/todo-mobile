@@ -1,7 +1,19 @@
-import { Text, View } from 'react-native'
+import {
+  NavigationContainer,
+  NavigationIndependentTree,
+} from '@react-navigation/native'
 
-import Languages from './screens/common/Languages'
+import RootStack from './navigation/RootNavigation'
+import LanguageProvider from './context/LanguageContext'
 
 export default function Index() {
-  return <Languages />
+  return (
+    <NavigationIndependentTree>
+      <LanguageProvider>
+        <NavigationContainer>
+          <RootStack />
+        </NavigationContainer>
+      </LanguageProvider>
+    </NavigationIndependentTree>
+  )
 }

@@ -8,6 +8,7 @@ const en = {
   english: 'English',
   french: 'Français',
   home: 'Home',
+  language: 'Language',
   myButton: 'My button',
   next: 'Next',
   logout: 'Logout',

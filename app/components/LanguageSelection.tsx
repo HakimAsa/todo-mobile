@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, View } from 'react-native'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 import Colors from '../config/colors'
 import TmText from './common/text/TmText'
@@ -7,6 +7,10 @@ import i18n from '../i18n'
 import { MaterialCommunityIcons } from '../config/icons'
 import TmButton from './common/button/TmButton'
 import RowContainer from './container/RowContainer'
+import {
+  LanguageContext,
+  LanguageContextType,
+} from '../context/LanguageContext'
 
 interface InitialValue {
   label: string
@@ -29,10 +33,19 @@ export default function LanguageSelection({
 }: LsProps) {
   const [open, setOpen] = useState(false)
   const [selectedLanguage, setSelectedLanguage] = useState(initialValue)
+  const languageContext = useContext<LanguageContextType>(LanguageContext)
+
+  if (!languageContext) {
+    throw new Error(
+      'LanguageContext is undefined. Make sure your component is wrapped with LanguageProvider.'
+    )
+  }
+  const { setLanguage } = useContext(LanguageContext) // Get setLanguage from context
   const changeLanguage = (item: InitialValue) => {
     setSelectedLanguage(item)
     setOpen(false)
     i18n.locale = item.value
+    setLanguage(item.value)
   }
 
   return (
