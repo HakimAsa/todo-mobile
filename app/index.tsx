@@ -3,7 +3,7 @@ import {
   NavigationIndependentTree,
 } from '@react-navigation/native'
 
-import RootStack from './navigation/RootNavigation'
+import RootStack from './navigation/RootNavigator'
 import LanguageProvider from './context/LanguageContext'
 
 export default function Index() {

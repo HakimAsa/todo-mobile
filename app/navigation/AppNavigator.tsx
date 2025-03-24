@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function AuthNavigation() {
+export default function ANavigation() {
   return (
     <View>
-      <Text>AuthNavigation will go here</Text>
+      <Text>APPNavigation will go here</Text>
     </View>
   )
 }
