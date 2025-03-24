@@ -6,6 +6,7 @@ import fr from '../config/fr'
 import i18n from '../i18n'
 import { LanguageContext } from '../context/LanguageContext'
 import routes from './routes'
+import Welcome from '../screens/common/auth/Welcome'
 
 const Stack = createNativeStackNavigator()
 export default function RootStack() {
@@ -26,13 +27,17 @@ export default function RootStack() {
   return (
     <Stack.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         title: i18n.t(`${route.name}`), // ✅ Will now update dynamically!
       })}
     >
       <Stack.Screen
         name={routes.LANGUAGE}
         component={Languages}
-        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name={routes.WELCOME}
+        component={Welcome}
       />
     </Stack.Navigator>
   )

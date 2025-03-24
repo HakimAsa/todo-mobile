@@ -4,6 +4,10 @@ import LanguageSelection from '@/app/components/LanguageSelection'
 import fr from '@/app/config/fr'
 import { useEffect, useState } from 'react'
 import Storage from '@/app/utils/Storage'
+import { NavigationProp } from '@react-navigation/native'
+import routes from '@/app/navigation/routes'
+import { ActivityIndicator } from 'react-native'
+import Colors from '@/app/config/colors'
 
 const data = [
   {
@@ -23,7 +27,11 @@ const defineInitialValue = function () {
     : { label: 'english', value: 'en' }
 }
 
-export default function Languages() {
+interface Language {
+  navigation: NavigationProp<any, any>
+}
+
+export default function Languages({ navigation }: Language) {
   const [loading, setLoading] = useState(true)
   const initialValue = defineInitialValue()
 
@@ -32,15 +40,34 @@ export default function Languages() {
     if (!isLanguageSelected) {
       await Storage.storeData('language', initialValue)
     }
-    // navigation.reset({
-    //   index: 0,
-    //   routes: [{ name: fr.presentation }], // Navigate to presentation without going back
-    // })
-    // navigation.navigate()
+    navigation.reset({
+      index: 0,
+      routes: [{ name: routes.WELCOME }], // Navigate to welcome screen without going back
+    })
   }
 
-  // useEffect(() => {
-  // }, [])
+  useEffect(() => {
+    const checkLanguageSelection = async () => {
+      const isLanguageSelected = await Storage.getData('language')
+      if (isLanguageSelected) {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: routes.WELCOME }], // Prevents back navigation
+        }) // Skip this screen if language is already selected
+      } else {
+        setLoading(false)
+      }
+    }
+    checkLanguageSelection()
+  }, [])
+
+  if (loading)
+    return (
+      <ActivityIndicator
+        size="large"
+        color={Colors.primary}
+      />
+    )
   return (
     <LanguageSelection
       data={data}
