@@ -5,6 +5,7 @@ import Languages from '../screens/common/Languages'
 import fr from '../config/fr'
 import i18n from '../i18n'
 import { LanguageContext } from '../context/LanguageContext'
+import routes from './routes'
 
 const Stack = createNativeStackNavigator()
 export default function RootStack() {
@@ -29,8 +30,9 @@ export default function RootStack() {
       })}
     >
       <Stack.Screen
-        name="language"
+        name={routes.LANGUAGE}
         component={Languages}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   )
