@@ -9,6 +9,7 @@ import i18n from '@/app/i18n'
 export default function Welcome() {
   return (
     <ImageBackground
+      blurRadius={10}
       style={styles.background}
       source={require('@/assets/images/backgroundImage.png')}
     >
@@ -31,7 +32,8 @@ export default function Welcome() {
         />
         <TmButton
           title={i18n.t('register')}
-          style={{ backgroundColor: Colors.primary1, marginTop: 10 }}
+          color="primary1"
+          style={{ marginTop: 0 }}
           onPress={() => console.log('go and register')}
         />
       </View>
@@ -57,6 +59,8 @@ const styles = StyleSheet.create({
   welcomeText: {
     color: Colors.primary,
     fontStyle: 'italic',
-    fontWeight: 900,
+    fontSize: 25,
+    fontWeight: '700',
+    paddingVertical: 10,
   },
 })

@@ -17,6 +17,8 @@ const Colors = {
   success: '#198754',
   white: '#fff',
   yellow: 'yellow',
-}
+} as const // `as const` makes the object properties readonly literals
 
 export default Colors
+// Extracts the keys of Colors as a TypeScript type
+export type ColorKeys = keyof typeof Colors

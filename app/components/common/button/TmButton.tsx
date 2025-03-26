@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, PressableProps, View } from 'react-native'
 import React from 'react'
-import Colors from '@/app/config/colors'
+
+import Colors, { ColorKeys } from '@/app/config/colors'
 import TmText from '../text/TmText'
 import i18n from '@/app/i18n'
 
@@ -9,10 +10,12 @@ interface ButtonProps extends PressableProps {
   textStyle?: any
   title?: string
   children?: React.ReactNode
+  color?: ColorKeys // Ensures `color` is a valid key in Colors
 }
 
 export default function TmButton({
   children,
+  color = 'primary',
   style,
   textStyle,
   title,
@@ -21,7 +24,7 @@ export default function TmButton({
   return (
     <Pressable
       {...props}
-      style={[styles.button, style]}
+      style={[styles.button, { backgroundColor: Colors[color] }, style]}
     >
       {title ? (
         <TmText
@@ -41,7 +44,6 @@ export default function TmButton({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: Colors.primary,
     borderRadius: 5,
     height: 35,
     color: Colors.white,
@@ -50,5 +52,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     fontWeight: 'bold',
+    marginVertical: 10,
   },
 })
