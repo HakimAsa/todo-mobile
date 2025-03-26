@@ -3,6 +3,7 @@ import React from 'react'
 import Colors from '@/app/config/colors'
 import Logo from '@/app/components/common/image/Logo'
 import TmText from '@/app/components/common/text/TmText'
+import TmButton from '@/app/components/common/button/TmButton'
 
 export default function Welcome() {
   return (
@@ -22,8 +23,13 @@ export default function Welcome() {
           Manage Your Tasks Efficiently
         </TmText>
       </View>
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
+      <View style={styles.buttonView}>
+        <TmButton title="Login" />
+        <TmButton
+          title="Register"
+          style={{ backgroundColor: Colors.primary1, marginTop: 10 }}
+        />
+      </View>
     </ImageBackground>
   )
 }
@@ -34,20 +40,14 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  loginButton: {
-    backgroundColor: Colors.primary,
-    height: 40,
+  buttonView: {
+    padding: 20,
     width: '100%',
   },
   logoContainer: {
     alignItems: 'center',
     position: 'absolute',
     top: 70,
-  },
-  registerButton: {
-    backgroundColor: Colors.primary1,
-    height: 40,
-    width: '100%',
   },
   welcomeText: {
     color: Colors.primary,

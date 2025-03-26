@@ -7,13 +7,15 @@ import i18n from '@/app/i18n'
 interface ButtonProps extends PressableProps {
   style?: any
   textStyle?: any
-  children: React.ReactNode | string
+  title?: string
+  children?: React.ReactNode
 }
 
 export default function TmButton({
   children,
   style,
   textStyle,
+  title,
   ...props
 }: ButtonProps) {
   return (
@@ -21,17 +23,18 @@ export default function TmButton({
       {...props}
       style={[styles.button, style]}
     >
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignSelf: 'stretch',
-          alignItems: 'center',
-          width: '100%',
-        }}
-      >
-        <TmText style={textStyle}>{children || i18n.t('myBtton')}</TmText>
-      </View>
+      {title ? (
+        <TmText
+          style={[
+            { textTransform: 'uppercase', color: Colors.white },
+            textStyle,
+          ]}
+        >
+          {title || i18n.t('myBtton')}
+        </TmText>
+      ) : (
+        <>{children}</>
+      )}
     </Pressable>
   )
 }
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // elevation: 1, // for android shadows
+    width: '100%',
     fontWeight: 'bold',
   },
 })
