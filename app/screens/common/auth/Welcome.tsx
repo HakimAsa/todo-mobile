@@ -4,6 +4,7 @@ import Colors from '@/app/config/colors'
 import Logo from '@/app/components/common/image/Logo'
 import TmText from '@/app/components/common/text/TmText'
 import TmButton from '@/app/components/common/button/TmButton'
+import i18n from '@/app/i18n'
 
 export default function Welcome() {
   return (
@@ -20,14 +21,18 @@ export default function Welcome() {
           big
           style={styles.welcomeText}
         >
-          Manage Your Tasks Efficiently
+          {i18n.t('tagLine')}
         </TmText>
       </View>
       <View style={styles.buttonView}>
-        <TmButton title="Login" />
         <TmButton
-          title="Register"
+          title={i18n.t('login')}
+          onPress={() => console.log('go and login')}
+        />
+        <TmButton
+          title={i18n.t('register')}
           style={{ backgroundColor: Colors.primary1, marginTop: 10 }}
+          onPress={() => console.log('go and register')}
         />
       </View>
     </ImageBackground>
