@@ -1,13 +1,13 @@
 import { getLocales } from 'expo-localization'
 
 import LanguageSelection from '@/app/components/LanguageSelection'
-import fr from '@/app/config/fr'
 import { useEffect, useState } from 'react'
 import Storage from '@/app/utils/Storage'
 import { NavigationProp } from '@react-navigation/native'
 import routes from '@/app/navigation/routes'
 import { ActivityIndicator } from 'react-native'
 import Colors from '@/app/config/colors'
+import TmProps from '@/TmProps'
 
 const data = [
   {
@@ -27,11 +27,7 @@ const defineInitialValue = function () {
     : { label: 'english', value: 'en' }
 }
 
-interface Language {
-  navigation: NavigationProp<any, any>
-}
-
-export default function Languages({ navigation }: Language) {
+export default function Languages({ navigation }: TmProps) {
   const [loading, setLoading] = useState(true)
   const initialValue = defineInitialValue()
 

@@ -5,8 +5,10 @@ import Logo from '@/app/components/common/image/Logo'
 import TmText from '@/app/components/common/text/TmText'
 import TmButton from '@/app/components/common/button/TmButton'
 import i18n from '@/app/i18n'
+import routes from '@/app/navigation/routes'
+import TmProps from '@/TmProps'
 
-export default function Welcome() {
+export default function Welcome({ navigation }: TmProps) {
   return (
     <ImageBackground
       blurRadius={10}
@@ -34,7 +36,7 @@ export default function Welcome() {
           title={i18n.t('register')}
           color="primary1"
           style={{ marginTop: 0 }}
-          onPress={() => console.log('go and register')}
+          onPress={() => navigation.navigate(routes.REGISTER)}
         />
       </View>
     </ImageBackground>

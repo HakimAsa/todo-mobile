@@ -6,6 +6,7 @@ import i18n from '../i18n'
 import { LanguageContext } from '../context/LanguageContext'
 import routes from './routes'
 import Welcome from '../screens/common/auth/Welcome'
+import Register from '../screens/common/auth/Register'
 
 const Stack = createNativeStackNavigator()
 export default function RootStack() {
@@ -36,6 +37,12 @@ export default function RootStack() {
       <Stack.Screen
         name={routes.WELCOME}
         component={Welcome}
+      />
+
+      <Stack.Screen
+        name={routes.REGISTER}
+        component={Register}
+        options={{ headerShown: true }}
       />
     </Stack.Navigator>
   )
