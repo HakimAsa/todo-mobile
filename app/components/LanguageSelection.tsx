@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, View } from 'react-native'
+import { Pressable, StyleSheet, View } from 'react-native'
 import { useContext, useState } from 'react'
 
 import Colors from '../config/colors'
@@ -6,12 +6,13 @@ import TmText from './common/text/TmText'
 import i18n from '../i18n'
 import { MaterialCommunityIcons } from '../config/icons'
 import TmButton from './common/button/TmButton'
-import RowContainer from './container/RowContainer'
+
 import {
   LanguageContext,
   LanguageContextType,
 } from '../context/LanguageContext'
 import Logo from './common/image/Logo'
+import { RowContainer } from './containers'
 
 interface InitialValue {
   label: string
