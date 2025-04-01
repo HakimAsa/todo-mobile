@@ -1,11 +1,11 @@
 import { View } from 'react-native'
-import React from 'react'
+import { ReactNode } from 'react'
 
-import TmProps from '@/TmProps'
 import { StatusBarHeight } from '@/app/config/constants'
 
-interface MainContainerProps extends TmProps {
-  style: any
+interface MainContainerProps {
+  children?: ReactNode
+  style?: any
 }
 
 export default function MainContainer({
@@ -15,7 +15,10 @@ export default function MainContainer({
 }: MainContainerProps) {
   return (
     <View
-      style={[{ padding: 20, paddingTop: StatusBarHeight + 30 }, style]}
+      style={[
+        { flex: 1, padding: 20, paddingTop: StatusBarHeight + 30 },
+        style,
+      ]}
       {...props}
     >
       {children}
