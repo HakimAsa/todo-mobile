@@ -1,10 +1,11 @@
 const routes = {
-  HOME: 'Home',
-  LANGUAGE: 'Language',
-  PROFILE: 'Profile',
-  REGISTER: 'Register',
-  SETTINGS: 'Settings',
-  WELCOME: 'Welcome',
+  // use value in lowercase for translations match
+  HOME: 'home',
+  LANGUAGE: 'language',
+  PROFILE: 'profile',
+  REGISTER: 'register',
+  SETTINGS: 'settings',
+  WELCOME: 'welcome',
 } as const
 
 export default routes

@@ -1,9 +1,9 @@
 import {
+  DimensionValue,
   StyleSheet,
   TextInput,
   TextInputProps,
   View,
-  ViewStyle,
 } from 'react-native'
 import React from 'react'
 
@@ -15,7 +15,7 @@ interface TmTextInputProps extends TextInputProps {
   iconColor?: string
   iconName?: McNames
   textStyle?: any
-  width?: ViewStyle
+  width?: DimensionValue
   label?: string
 }
 
@@ -28,10 +28,6 @@ export default function TmTextInput({
   width,
   ...props
 }: TmTextInputProps) {
-  const containerStyle: ViewStyle = {
-    width:
-      typeof width === 'number' || typeof width === 'string' ? width : '100%',
-  }
   return (
     <View style={{ marginBottom: 5 }}>
       {label ? (
@@ -43,7 +39,7 @@ export default function TmTextInput({
           {label}
         </TmText>
       ) : null}
-      <View style={[styles.container, containerStyle]}>
+      <View style={[styles.container, { width }]}>
         {iconName && (
           <MaterialCommunityIcons
             name={iconName} // Fixed: Corrected the type of 'name' prop
@@ -69,13 +65,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: Colors.white,
     borderRadius: 5,
+    marginVertical: 10,
+    borderColor: Colors.primary1,
     borderWidth: 1,
-    borderColor: Colors.medium,
+    minHeight: 40, // ensures enough space to vertically center content
   },
   input: {
     flex: 1,
-    height: 35,
+    fontSize: 14,
+    paddingVertical: 5, // instead of margin
     borderColor: 'gray',
-    marginBottom: 10,
   },
 })
