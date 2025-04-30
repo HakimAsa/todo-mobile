@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, View } from 'react-native'
 import React from 'react'
 import Colors from '@/app/config/colors'
 import Logo from '@/app/components/common/image/Logo'
