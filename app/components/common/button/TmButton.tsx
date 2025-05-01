@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, PressableProps, View } from 'react-native'
 import React from 'react'
 
-import Colors, { ColorKeys } from '@/app/config/colors'
+import Colors, { ColorKeys } from '@/config/colors'
 import TmText from '../text/TmText'
 import i18n from '@/app/i18n'
 

@@ -8,8 +8,8 @@ import {
 import React from 'react'
 
 import TmText from '../common/text/TmText'
-import Colors from '@/app/config/colors'
-import { MaterialCommunityIcons, McNames } from '@/app/config/icons'
+import Colors from '@/config/colors'
+import { MaterialCommunityIcons, McNames } from '@/config/icons'
 
 interface TmTextInputProps extends TextInputProps {
   iconColor?: string

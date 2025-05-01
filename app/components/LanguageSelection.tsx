@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet, View } from 'react-native'
 import { useContext, useState } from 'react'
 
-import Colors from '../config/colors'
+import Colors from '../../config/colors'
 import TmText from './common/text/TmText'
 import i18n from '../i18n'
-import { MaterialCommunityIcons } from '../config/icons'
+import { MaterialCommunityIcons } from '../../config/icons'
 import TmButton from './common/button/TmButton'
 
 import {

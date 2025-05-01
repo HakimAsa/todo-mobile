@@ -1,8 +1,8 @@
 import { getLocales } from 'expo-localization'
 import { I18n } from 'i18n-js'
 
-import en from './config/en'
-import fr from './config/fr'
+import en from '../translation/en'
+import fr from '../translation/fr'
 // Set the key-value pairs for the different languages you want to support.
 const translations = {
   en,

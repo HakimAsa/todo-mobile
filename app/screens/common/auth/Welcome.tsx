@@ -1,12 +1,13 @@
 import { ImageBackground, StyleSheet, View } from 'react-native'
-import React from 'react'
-import Colors from '@/app/config/colors'
+
+import Colors from '@/config/colors'
 import Logo from '@/app/components/common/image/Logo'
 import TmText from '@/app/components/common/text/TmText'
 import TmButton from '@/app/components/common/button/TmButton'
 import i18n from '@/app/i18n'
 import routes from '@/app/navigation/routes'
 import TmProps from '@/TmProps'
+import TRN_KEYS from '@/translation/keys'
 
 export default function Welcome({ navigation }: TmProps) {
   return (
@@ -29,11 +30,11 @@ export default function Welcome({ navigation }: TmProps) {
       </View>
       <View style={styles.buttonView}>
         <TmButton
-          title={i18n.t('login')}
+          title={i18n.t(TRN_KEYS.LOGIN)}
           onPress={() => console.log('go and login')}
         />
         <TmButton
-          title={i18n.t('register')}
+          title={i18n.t(TRN_KEYS.REGISTER)}
           color="primary1"
           style={{ marginTop: 0 }}
           onPress={() => navigation.navigate(routes.REGISTER)}

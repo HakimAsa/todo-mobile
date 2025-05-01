@@ -1,6 +1,6 @@
 import * as SecureStore from 'expo-secure-store'
 
-import { onWeb } from '../../config/constants'
+import { onWeb } from '../../../config/constants'
 
 const key = 'authToken'
 const storeToken = async (authToken: string) => {

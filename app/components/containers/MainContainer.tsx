@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import { ReactNode } from 'react'
 
-import { StatusBarHeight } from '@/app/config/constants'
+import { StatusBarHeight } from '@/config/constants'
 
 interface MainContainerProps {
   children?: ReactNode

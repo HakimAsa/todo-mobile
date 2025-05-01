@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import Storage from '@/app/utils/Storage'
 import routes from '@/app/navigation/routes'
 import { ActivityIndicator } from 'react-native'
-import Colors from '@/app/config/colors'
+import Colors from '@/config/colors'
 import TmProps from '@/TmProps'
 
 const data = [
