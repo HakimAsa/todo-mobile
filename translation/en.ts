@@ -1,10 +1,12 @@
 const en = {
   addTask: 'Add Task',
   cancel: 'Cancel',
+  confirmPassword: 'Confirm Password',
   chooseLanguage: 'Choose your Language',
   delete: 'Delete',
   edit: 'Edit',
   editTask: 'Edit Task',
+  email: 'Email',
   english: 'English',
   french: 'Français',
   home: 'Home',
@@ -19,6 +21,7 @@ const en = {
   tagLine: 'Manage Your Tasks Efficiently!',
   tasks: 'Tasks',
   title: 'Task Management',
+  username: 'Username',
 }
 
 export default en

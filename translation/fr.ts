@@ -1,7 +1,9 @@
 const fr = {
+  confirmPassword: 'Confirmer le mot de passe',
   chooseLanguage: 'Choisir votre langue',
   delete: 'Supprimer',
   edit: 'Modifier',
+  email: 'E-mail',
   english: 'English',
   french: 'Français',
   home: 'Accueil',
@@ -14,6 +16,7 @@ const fr = {
   save: 'Enregistrer',
   selectItem: 'Sélectionner un item',
   tagLine: 'Gérez vos tâches efficacement !',
+  username: `Nom d'utilisateur`,
 }
 
 export default fr

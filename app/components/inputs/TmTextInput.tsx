@@ -44,7 +44,7 @@ export default function TmTextInput({
           <MaterialCommunityIcons
             name={iconName} // Fixed: Corrected the type of 'name' prop
             color={iconColor}
-            size={24}
+            size={20}
           />
         )}
 
