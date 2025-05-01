@@ -43,7 +43,7 @@ export default function TmTextInput({
         {iconName && (
           <MaterialCommunityIcons
             name={iconName} // Fixed: Corrected the type of 'name' prop
-            color={iconColor}
+            color={iconColor || Colors.medium}
             size={20}
           />
         )}
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderRadius: 5,
     marginVertical: 10,
-    borderColor: Colors.primary1,
-    borderWidth: 1,
+    borderColor: Colors.secondary,
+    borderWidth: 0.5,
     minHeight: 40, // ensures enough space to vertically center content
   },
   input: {

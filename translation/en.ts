@@ -15,6 +15,7 @@ const en = {
   logout: 'Logout',
   myButton: 'My button',
   next: 'Next',
+  password: 'Password',
   register: 'Register',
   save: 'Save',
   selectItem: 'Select an item',

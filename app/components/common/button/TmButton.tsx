@@ -45,7 +45,7 @@ export default function TmButton({
 const styles = StyleSheet.create({
   button: {
     borderRadius: 5,
-    height: 35,
+    height: 40,
     color: Colors.white,
     display: 'flex',
     justifyContent: 'center',
