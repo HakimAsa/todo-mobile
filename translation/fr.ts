@@ -14,6 +14,7 @@ const fr = {
   register: 'S’inscrire',
   next: 'Suivant',
   save: 'Enregistrer',
+  signup: 'S’inscrire',
   selectItem: 'Sélectionner un item',
   tagLine: 'Gérez vos tâches efficacement !',
   username: `Nom d'utilisateur`,

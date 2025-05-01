@@ -5,7 +5,7 @@ import Colors, { ColorKeys } from '@/config/colors'
 import TmText from '../text/TmText'
 import i18n from '@/app/i18n'
 
-interface ButtonProps extends PressableProps {
+export interface TmButtonProps extends PressableProps {
   style?: any
   textStyle?: any
   title?: string
@@ -20,7 +20,7 @@ export default function TmButton({
   textStyle,
   title,
   ...props
-}: ButtonProps) {
+}: TmButtonProps) {
   return (
     <Pressable
       {...props}

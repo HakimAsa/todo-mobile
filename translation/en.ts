@@ -19,6 +19,7 @@ const en = {
   register: 'Register',
   save: 'Save',
   selectItem: 'Select an item',
+  signup: 'Sign up',
   tagLine: 'Manage Your Tasks Efficiently!',
   tasks: 'Tasks',
   title: 'Task Management',

@@ -1,12 +1,23 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Formik, FormikHelpers } from 'formik'
+import { AnySchema } from 'yup'
 
-export default function TmForm() {
-  return (
-    <View>
-      <Text>TmForm</Text>
-    </View>
-  )
+import { commonProps } from '@/TmProps'
+
+interface TmFormProps extends commonProps {
+  onSubmit: (values: any, formikHelpers: FormikHelpers<any>) => Promise<any>
+  initialValues: any
+  validationSchema: AnySchema
 }
 
-const styles = StyleSheet.create({})
+export default function TmForm(props: TmFormProps) {
+  const { initialValues, onSubmit, validationSchema, children } = props
+  return (
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
+      {() => <>{children}</>}
+    </Formik>
+  )
+}

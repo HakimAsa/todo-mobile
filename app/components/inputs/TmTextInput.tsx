@@ -3,6 +3,7 @@ import {
   StyleSheet,
   TextInput,
   TextInputProps,
+  TouchableOpacity,
   View,
 } from 'react-native'
 import React from 'react'
@@ -11,21 +12,29 @@ import TmText from '../common/text/TmText'
 import Colors from '@/config/colors'
 import { MaterialCommunityIcons, McNames } from '@/config/icons'
 
-interface TmTextInputProps extends TextInputProps {
+export interface TmTextInputProps extends TextInputProps {
   iconColor?: string
   iconName?: McNames
+  input?: any
   textStyle?: any
   width?: DimensionValue
   label?: string
+  isPasswordField?: boolean
+  isPasswordVisible?: boolean
+  setIsPasswordVisible?: (param: boolean) => void
 }
 
 // ...
 export default function TmTextInput({
   iconColor,
   iconName,
+  input,
   label,
   textStyle,
   width,
+  isPasswordField,
+  isPasswordVisible,
+  setIsPasswordVisible,
   ...props
 }: TmTextInputProps) {
   return (
@@ -39,7 +48,7 @@ export default function TmTextInput({
           {label}
         </TmText>
       ) : null}
-      <View style={[styles.container, { width }]}>
+      <View style={[styles.container, { width }, input]}>
         {iconName && (
           <MaterialCommunityIcons
             name={iconName} // Fixed: Corrected the type of 'name' prop
@@ -53,6 +62,17 @@ export default function TmTextInput({
           style={[styles.input]}
           {...props}
         />
+        {isPasswordField && (
+          <TouchableOpacity
+            onPress={() => setIsPasswordVisible?.(!isPasswordVisible)}
+          >
+            <MaterialCommunityIcons
+              name={isPasswordVisible ? 'eye-off' : 'eye'}
+              color={iconColor || Colors.medium}
+              size={20}
+            />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   )

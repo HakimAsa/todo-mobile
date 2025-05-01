@@ -4,6 +4,7 @@ const TRN_KEYS = {
   LOGIN: 'login',
   PASSWORD: 'password',
   REGISTER: 'register',
+  SIGNUP: 'signup',
   USERNAME: 'username',
 }
 

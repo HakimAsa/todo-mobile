@@ -1,13 +1,13 @@
 import { NavigationProp } from '@react-navigation/native'
-import React from 'react'
+import { ReactNode } from 'react'
 import { TextProps, ViewProps } from 'react-native'
 
 export default interface TmProps {
   navigation: NavigationProp<any, any>
-  children?: React.ReactNode
 }
 
 export type commonProps = {
+  children?: ReactNode
   style?: ViewProps['style']
   textStyle?: TextProps['style']
 }
