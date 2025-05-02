@@ -1,5 +1,6 @@
 const en = {
   addTask: 'Add Task',
+  alreadyHaveAnAccount: 'Already have an Account?',
   cancel: 'Cancel',
   confirmPassword: 'Confirm Password',
   chooseLanguage: 'Choose your Language',

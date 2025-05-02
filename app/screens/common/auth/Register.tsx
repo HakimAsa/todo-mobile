@@ -3,11 +3,15 @@ import * as Yup from 'yup'
 
 import MainContainer, {
   KeyboardAvoidViewContainer,
+  Row,
 } from '@/app/components/containers'
 import i18n from '@/app/i18n'
 import TRN_KEYS from '@/translation/keys'
 import IconHeader from '@/app/components/icons/IconHeader'
 import TmForm, { TmFormField, TmSubmitButton } from '@/app/components/forms'
+import TmText from '@/app/components/common/text/TmText'
+import TmPressableText from '@/app/components/common/text/TmPressableText'
+import AuthFooter from './AuthFooter'
 
 const signupSchema = Yup.object({
   confirmPassword: Yup.string()
@@ -72,6 +76,10 @@ export default function Register() {
             />
             {/* Submit button */}
             <TmSubmitButton title={i18n.t(TRN_KEYS.SIGNUP)} />
+            <AuthFooter
+              unlinkedText={TRN_KEYS.ALREADYHAVEANACCOUNT}
+              linkedText={TRN_KEYS.LOGIN}
+            />
           </TmForm>
         </ScrollView>
       </KeyboardAvoidViewContainer>
