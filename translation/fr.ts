@@ -1,11 +1,13 @@
 const fr = {
   alreadyHaveAnAccount: 'Vous avez déjà un compte ?',
-  confirmPassword: 'Confirmer le mot de passe',
   chooseLanguage: 'Choisir votre langue',
+  confirmPassword: 'Confirmer le mot de passe',
+  createAnAccount: 'Créer un Compte',
   delete: 'Supprimer',
   edit: 'Modifier',
   email: 'E-mail',
   english: 'English',
+  forgotPassword: 'Mot de passe oublié?',
   french: 'Français',
   home: 'Accueil',
   language: 'Langue',
@@ -19,6 +21,7 @@ const fr = {
   selectItem: 'Sélectionner un item',
   tagLine: 'Gérez vos tâches efficacement !',
   username: `Nom d'utilisateur`,
+  usernameOrEmail: `Nom d'utilisateur ou E-mail`,
 }
 
 export default fr

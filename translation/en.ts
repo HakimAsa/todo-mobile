@@ -2,13 +2,15 @@ const en = {
   addTask: 'Add Task',
   alreadyHaveAnAccount: 'Already have an Account?',
   cancel: 'Cancel',
-  confirmPassword: 'Confirm Password',
   chooseLanguage: 'Choose your Language',
+  confirmPassword: 'Confirm Password',
+  createAnAccount: 'Create An Account',
   delete: 'Delete',
   edit: 'Edit',
   editTask: 'Edit Task',
   email: 'Email',
   english: 'English',
+  forgotPassword: 'Forgot Password?',
   french: 'Français',
   home: 'Home',
   language: 'Language',
@@ -25,6 +27,7 @@ const en = {
   tasks: 'Tasks',
   title: 'Task Management',
   username: 'Username',
+  usernameOrEmail: 'Username or Email',
 }
 
 export default en

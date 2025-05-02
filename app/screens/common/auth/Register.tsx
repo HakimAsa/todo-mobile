@@ -3,15 +3,14 @@ import * as Yup from 'yup'
 
 import MainContainer, {
   KeyboardAvoidViewContainer,
-  Row,
 } from '@/app/components/containers'
 import i18n from '@/app/i18n'
 import TRN_KEYS from '@/translation/keys'
 import IconHeader from '@/app/components/icons/IconHeader'
 import TmForm, { TmFormField, TmSubmitButton } from '@/app/components/forms'
-import TmText from '@/app/components/common/text/TmText'
-import TmPressableText from '@/app/components/common/text/TmPressableText'
 import AuthFooter from './AuthFooter'
+import routes from '@/app/navigation/routes'
+import TmProps from '@/TmProps'
 
 const signupSchema = Yup.object({
   confirmPassword: Yup.string()
@@ -31,7 +30,7 @@ const initialValues: SignupFormValues = {
   password: '',
   username: '',
 }
-export default function Register() {
+export default function Register({ navigation }: TmProps) {
   // register user api call
   const registerUser = async (values: any) => {
     const res = {}
@@ -79,6 +78,7 @@ export default function Register() {
             <AuthFooter
               unlinkedText={TRN_KEYS.ALREADYHAVEANACCOUNT}
               linkedText={TRN_KEYS.LOGIN}
+              onPress={() => navigation.navigate(routes.LOGIN)}
             />
           </TmForm>
         </ScrollView>

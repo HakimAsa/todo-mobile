@@ -4,14 +4,16 @@ import TmText from './TmText'
 import Colors from '@/config/colors'
 
 export default function TmPressableText({ ...props }) {
-  const { children } = props
+  const { small, children, textAlign, fontWeight } = props
   return (
     <Pressable {...props}>
       <TmText
+        small={small}
         style={{
           color: Colors.primary,
           textDecorationLine: 'underline',
-          fontWeight: '700',
+          fontWeight: fontWeight || '700',
+          textAlign,
         }}
       >
         {children}

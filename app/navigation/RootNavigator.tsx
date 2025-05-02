@@ -7,6 +7,7 @@ import { LanguageContext } from '../context/LanguageContext'
 import routes from './routes'
 import Welcome from '../screens/common/auth/Welcome'
 import Register from '../screens/common/auth/Register'
+import Login from '../screens/common/auth/Login'
 
 const Stack = createNativeStackNavigator()
 export default function RootStack() {
@@ -42,6 +43,11 @@ export default function RootStack() {
       <Stack.Screen
         name={routes.REGISTER}
         component={Register}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name={routes.LOGIN}
+        component={Login}
         options={{ headerShown: true }}
       />
     </Stack.Navigator>

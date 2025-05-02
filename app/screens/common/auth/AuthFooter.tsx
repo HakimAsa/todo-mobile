@@ -5,9 +5,11 @@ import TmPressableText from '@/app/components/common/text/TmPressableText'
 
 export default function AuthFooter({
   linkedText,
+  onPress,
   unlinkedText,
 }: {
   linkedText: string
+  onPress: () => void
   unlinkedText: string
 }) {
   return (
@@ -16,9 +18,7 @@ export default function AuthFooter({
       style={{ marginVertical: 25, justifyContent: 'center' }}
     >
       <TmText style={{ color: '#575757' }}>{i18n.t(unlinkedText)}</TmText>
-      <TmPressableText onPress={() => alert('ok')}>
-        {i18n.t(linkedText)}
-      </TmPressableText>
+      <TmPressableText onPress={onPress}>{i18n.t(linkedText)}</TmPressableText>
     </Row>
   )
 }

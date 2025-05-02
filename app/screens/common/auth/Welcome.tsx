@@ -31,7 +31,7 @@ export default function Welcome({ navigation }: TmProps) {
       <View style={styles.buttonView}>
         <TmButton
           title={i18n.t(TRN_KEYS.LOGIN)}
-          onPress={() => console.log('go and login')}
+          onPress={() => navigation.navigate(routes.LOGIN)}
         />
         <TmButton
           title={i18n.t(TRN_KEYS.REGISTER)}

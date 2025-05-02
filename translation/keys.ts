@@ -1,12 +1,15 @@
 const TRN_KEYS = {
   ALREADYHAVEANACCOUNT: 'alreadyHaveAnAccount',
   CONFIRMPASSWORD: 'confirmPassword',
+  CREATEANACCOUNT: 'createAnAccount',
   EMAIL: 'email',
+  FORGOTPASSWORD: 'forgotPassword',
   LOGIN: 'login',
   PASSWORD: 'password',
   REGISTER: 'register',
   SIGNUP: 'signup',
   USERNAME: 'username',
+  USERNAMEOREMAIL: 'usernameOrEmail',
 }
 
 export default TRN_KEYS

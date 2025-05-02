@@ -2,6 +2,7 @@ const routes = {
   // use value in lowercase for translations match
   HOME: 'home',
   LANGUAGE: 'language',
+  LOGIN: 'login',
   PROFILE: 'profile',
   REGISTER: 'register',
   SETTINGS: 'settings',
