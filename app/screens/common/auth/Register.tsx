@@ -7,10 +7,17 @@ import MainContainer, {
 import i18n from '@/app/i18n'
 import TRN_KEYS from '@/translation/keys'
 import IconHeader from '@/app/components/icons/IconHeader'
-import TmForm, { TmFormField, TmSubmitButton } from '@/app/components/forms'
+import TmForm, {
+  ErrorMessages,
+  TmFormField,
+  TmSubmitButton,
+} from '@/app/components/forms'
 import AuthFooter from './AuthFooter'
 import routes from '@/app/navigation/routes'
 import TmProps from '@/TmProps'
+import authApi from '@/app/api/auth'
+import useApi from '@/app/hooks/useApi'
+import TmActivityIndicator from '@/app/components/loader/TmActivityIndicator'
 
 const signupSchema = Yup.object({
   confirmPassword: Yup.string()
@@ -31,11 +38,19 @@ const initialValues: SignupFormValues = {
   username: '',
 }
 export default function Register({ navigation }: TmProps) {
+  const {
+    error,
+    loading,
+    message,
+    request: registerUser,
+  } = useApi(authApi.register)
   // register user api call
-  const registerUser = async (values: any) => {
-    const res = {}
-    console.log(values)
+  const handleSubmit = async (values: any) => {
+    const res = await registerUser(values)
+    if (!res?.ok) return
+    navigation.navigate(routes.LOGIN)
   }
+  if (loading) return <TmActivityIndicator visible={loading} />
   return (
     <MainContainer>
       {/* Register form */}
@@ -48,9 +63,13 @@ export default function Register({ navigation }: TmProps) {
           {/* Registration fields */}
           <TmForm
             initialValues={initialValues}
-            onSubmit={registerUser}
+            onSubmit={handleSubmit}
             validationSchema={signupSchema}
           >
+            <ErrorMessages
+              error={message || 'Something went wrong!'}
+              visible={error}
+            />
             <TmFormField
               name="username"
               placeholder={i18n.t(TRN_KEYS.USERNAME)}

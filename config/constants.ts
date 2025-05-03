@@ -17,9 +17,6 @@ export const ScreenHeight = Dimensions.get('screen').height
 export const StatusBarHeight = Constants.statusBarHeight
 
 //export endpoints
-const ep = {
-  AUTH: 'auth',
-  TODOS: 'todos',
-}
+const myconst = {}
 
-export default ep
+export default myconst
