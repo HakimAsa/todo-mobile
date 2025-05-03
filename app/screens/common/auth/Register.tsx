@@ -18,6 +18,8 @@ import TmProps from '@/TmProps'
 import authApi from '@/app/api/auth'
 import useApi from '@/app/hooks/useApi'
 import TmActivityIndicator from '@/app/components/loader/TmActivityIndicator'
+import MessageModal from '@/app/components/modals/MessageModal'
+import { useState } from 'react'
 
 const signupSchema = Yup.object({
   confirmpassword: Yup.string()
@@ -44,12 +46,57 @@ export default function Register({ navigation }: TmProps) {
     message,
     request: registerUser,
   } = useApi(authApi.register)
+
+  // modal state values
+  const [buttonText, setButtonText] = useState('')
+  const [headerText, setHeaderText] = useState('')
+  const [modalVisible, setModalVisible] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
+  const [modalMessageType, setModalMessageType] = useState<'success' | 'fail'>()
+
+  const buttonHandler = () => {
+    if (modalMessageType === 'success') {
+      //move to login screen without going back
+      navigation.navigate(routes.LOGIN)
+      // navigation.reset({
+      //   index: 0,
+      //   routes: [{ name: i18n.t(TRN_KEYS.LOGIN) }],
+      // })
+    }
+    setModalVisible(false)
+  }
+
+  // show modal function
+  const showModal = (
+    type: 'success' | 'fail',
+    headerText: string,
+    message: string,
+    buttonText: string
+  ) => {
+    setModalMessageType(type)
+    setHeaderText(headerText)
+    setButtonText(buttonText)
+    setModalMessage(message)
+    setModalVisible(true)
+  }
   // register user api call
   const handleSubmit = async (values: any) => {
     console.log(values)
     const res = await registerUser(values)
-    if (!res?.ok) return
-    navigation.navigate(routes.LOGIN)
+    if (!res?.ok) {
+      return showModal(
+        'fail',
+        `Failed to register`,
+        message || 'Something went wrong',
+        TRN_KEYS.CLOSE
+      )
+    }
+    return showModal(
+      'success',
+      `All Good`,
+      'Registration is successfull',
+      TRN_KEYS.LOGIN
+    )
   }
   if (loading) return <TmActivityIndicator visible={loading} />
   return (
@@ -102,6 +149,14 @@ export default function Register({ navigation }: TmProps) {
             />
           </TmForm>
         </ScrollView>
+        <MessageModal
+          buttonHandler={buttonHandler}
+          buttonText={buttonText}
+          headerText={headerText}
+          message={modalMessage}
+          modalVisible={modalVisible}
+          type={modalMessageType}
+        />
       </KeyboardAvoidViewContainer>
     </MainContainer>
   )

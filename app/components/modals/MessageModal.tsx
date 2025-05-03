@@ -14,7 +14,7 @@ interface MessageModalProps {
   headerText: string
   message: string
   modalVisible: boolean
-  type: 'success' | 'fail'
+  type?: 'success' | 'fail'
 }
 
 export default function MessageModal({
@@ -26,7 +26,11 @@ export default function MessageModal({
   type,
 }: MessageModalProps) {
   return (
-    <TmModal>
+    <TmModal
+      animationType="slide"
+      visible={modalVisible}
+      transparent
+    >
       <Pressable
         onPress={buttonHandler}
         style={styles.container}
@@ -37,11 +41,22 @@ export default function MessageModal({
             name={type === 'success' ? 'check-circle' : 'close-circle'}
             size={100}
           />
-          <TmText big>{headerText}</TmText>
-          <TmText medium>{message}</TmText>
-          <TmButton onPress={buttonHandler}>
-            {buttonText || i18n.t(TRN_KEYS.DONE)}
-          </TmButton>
+          <TmText
+            style={{ color: Colors.white }}
+            big
+          >
+            {headerText}
+          </TmText>
+          <TmText
+            style={{ color: Colors.white }}
+            medium
+          >
+            {message}
+          </TmText>
+          <TmButton
+            title={i18n.t(buttonText || TRN_KEYS.DONE)}
+            onPress={buttonHandler}
+          />
         </View>
       </Pressable>
     </TmModal>

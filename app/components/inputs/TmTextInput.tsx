@@ -60,6 +60,8 @@ export default function TmTextInput({
         <TextInput
           placeholderTextColor={Colors.medium}
           style={[styles.input]}
+          autoCapitalize="none"
+          autoCorrect={false}
           {...props}
         />
         {isPasswordField && (

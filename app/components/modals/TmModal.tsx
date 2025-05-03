@@ -1,7 +1,7 @@
 import { Modal } from 'react-native'
 
-import { commonProps } from '@/TmProps'
+export default function TmModal({ ...props }) {
+  const { children } = props
 
-export default function TmModal({ children, ...props }: commonProps) {
   return <Modal {...props}>{children}</Modal>
 }

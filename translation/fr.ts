@@ -1,6 +1,7 @@
 const fr = {
   alreadyHaveAnAccount: 'Vous avez déjà un compte ?',
   chooseLanguage: 'Choisir votre langue',
+  close: 'Fermer',
   confirmPassword: 'Confirmer le mot de passe',
   createAnAccount: 'Créer un Compte',
   delete: 'Supprimer',

@@ -3,6 +3,7 @@ const en = {
   alreadyHaveAnAccount: 'Already have an Account?',
   cancel: 'Cancel',
   chooseLanguage: 'Choose your Language',
+  close: 'Close',
   confirmPassword: 'Confirm Password',
   createAnAccount: 'Create An Account',
   delete: 'Delete',
