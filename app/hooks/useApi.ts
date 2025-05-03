@@ -19,12 +19,15 @@ export default function useApi<T, Args extends any[]>(
     setLoading(true)
     const response = await apiFunc(...args)
     setLoading(false)
+
     setError(!response?.ok)
     setData(response?.data ?? null)
     setMessage(
       !response
         ? 'Unauthorized'
-        : callServerError(response) || 'An error occured!'
+        : !response?.ok
+        ? callServerError(response)
+        : 'An error occured!'
     )
 
     return response

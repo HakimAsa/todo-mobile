@@ -2,9 +2,10 @@ import { ApisauceInstance, ApiResponse, create } from 'apisauce'
 
 import authStorage from '../context/auth/Storage'
 import HM, { HttpMethods } from '../utils/httpMethods'
+import helpers from '../utils/helpers'
 
 const apiClient: ApisauceInstance = create({
-  baseURL: 'https://example.com', //todo
+  baseURL: helpers.getBaseUrl(),
   timeout: 2000,
 })
 

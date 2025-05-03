@@ -2,6 +2,7 @@ const TRN_KEYS = {
   ALREADYHAVEANACCOUNT: 'alreadyHaveAnAccount',
   CONFIRMPASSWORD: 'confirmPassword',
   CREATEANACCOUNT: 'createAnAccount',
+  DONE: 'done',
   EMAIL: 'email',
   FORGOTPASSWORD: 'forgotPassword',
   LOGIN: 'login',

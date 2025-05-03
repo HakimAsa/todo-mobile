@@ -7,7 +7,7 @@ const Colors = {
   focus: '#e0f7fa',
   inputBorderColer: '#00796b',
   light: {},
-  ligthblack: '#454545',
+  lightblack: '#454545',
   ligthgray: '#d3d3d3',
   medium: '#6e6969',
   orange: 'orange',

@@ -6,6 +6,7 @@ const en = {
   confirmPassword: 'Confirm Password',
   createAnAccount: 'Create An Account',
   delete: 'Delete',
+  done: 'Done',
   edit: 'Edit',
   editTask: 'Edit Task',
   email: 'Email',

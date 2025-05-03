@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DimensionValue, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { useFormikContext } from 'formik'
 
 import TmTextInput, { TmTextInputProps } from '../inputs/TmTextInput'
@@ -22,7 +22,7 @@ export default function TmFormField<T>({
 
   const isPasswordField =
     name.toLowerCase() === 'password' ||
-    name === 'confirmPassword' ||
+    name === 'confirmpassword' ||
     name === 'confirmNewPassword' ||
     name === 'newPassword'
   return (

@@ -20,7 +20,7 @@ import useApi from '@/app/hooks/useApi'
 import TmActivityIndicator from '@/app/components/loader/TmActivityIndicator'
 
 const signupSchema = Yup.object({
-  confirmPassword: Yup.string()
+  confirmpassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Mismatched passwords') //"Mismatched passwords" //Mots de passe incompatibles
     .required()
     .min(8), //add custom text for translation
@@ -32,7 +32,7 @@ const signupSchema = Yup.object({
 type SignupFormValues = Yup.InferType<typeof signupSchema>
 
 const initialValues: SignupFormValues = {
-  confirmPassword: '',
+  confirmpassword: '',
   email: '',
   password: '',
   username: '',
@@ -46,6 +46,7 @@ export default function Register({ navigation }: TmProps) {
   } = useApi(authApi.register)
   // register user api call
   const handleSubmit = async (values: any) => {
+    console.log(values)
     const res = await registerUser(values)
     if (!res?.ok) return
     navigation.navigate(routes.LOGIN)
@@ -87,7 +88,7 @@ export default function Register({ navigation }: TmProps) {
               iconName="lock"
             />
             <TmFormField
-              name="confirmPassword"
+              name="confirmpassword"
               label={i18n.t(TRN_KEYS.CONFIRMPASSWORD)}
               placeholder="* * * * * * * *"
               iconName="lock"

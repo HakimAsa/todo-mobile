@@ -4,6 +4,7 @@ const fr = {
   confirmPassword: 'Confirmer le mot de passe',
   createAnAccount: 'Créer un Compte',
   delete: 'Supprimer',
+  done: 'Fait',
   edit: 'Modifier',
   email: 'E-mail',
   english: 'English',
