@@ -1,14 +1,21 @@
 import { ApisauceInstance, ApiResponse, create } from 'apisauce'
+
+import authStorage from '../context/auth/Storage'
 import HM, { HttpMethods } from '../utils/httpMethods'
 
 const apiClient: ApisauceInstance = create({
-  baseURL: 'https:example.com', //
+  baseURL: 'https://example.com', //todo
   timeout: 2000,
 })
 
 apiClient.addAsyncRequestTransform(async (request) => {
+  const authToken = await authStorage.getToken()
+  if (authToken) return
+
   if (!request.headers) request.headers = {}
-  //todo later
+
+  request.headers['Authorization'] = `Bearer ${authToken}`
+  request.headers['x-auth-token'] = authToken
 })
 
 type callServerParams = {
@@ -25,7 +32,7 @@ const callServer = async <T = any>({
   headers,
 }: callServerParams): Promise<ApiResponse<T>> => {
   // if no headers, stringify JSON; otherwise keep raw
-  const body = !headers ? JSON.stringify(json || {}, null, 2) : json // json: FILE upload
+  const body = !headers ? JSON.stringify(json || {}, null, 2) : json // json: for FILE upload case
 
   //clone headers to avoid mutation
   const finalHeaders = headers && { ...headers }
